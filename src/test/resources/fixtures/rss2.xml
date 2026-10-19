@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>The Example Review</title>
+    <link>https://example.com/</link>
+    <description>Occasional writing.</description>
+    <item>
+      <title>On quiet software</title>
+      <link>https://example.com/quiet</link>
+      <guid isPermaLink="false">tag:example.com,2026:quiet</guid>
+      <pubDate>Mon, 12 Oct 2026 09:00:00 +0000</pubDate>
+      <author>ada@example.com (Ada)</author>
+      <description>&lt;p&gt;Software that informs without demanding attention.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A second post</title>
+      <link>https://example.com/second</link>
+      <guid isPermaLink="false">tag:example.com,2026:second</guid>
+      <pubDate>Tue, 13 Oct 2026 09:00:00 +0000</pubDate>
+      <description>&lt;p&gt;Another one.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

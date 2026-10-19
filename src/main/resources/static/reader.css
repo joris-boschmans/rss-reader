@@ -1,0 +1,268 @@
+/* Quiet Reader. One serif stack, one measure, two palettes, no shadows. */
+
+:root {
+  --bg: #faf7f2;
+  --fg: #23201c;
+  --muted: #716a60;
+  --faint: #8c857a;
+  --rule: #e4ddd1;
+  --accent: #2f5d50;
+  --accent-fg: #fbf9f6;
+  --warn: #8a4b32;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171614;
+    --fg: #ddd6ca;
+    --muted: #978f82;
+    --faint: #7d756a;
+    --rule: #2f2b26;
+    --accent: #8fc0ae;
+    --accent-fg: #15201c;
+    --warn: #d29377;
+  }
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 19px/1.6 "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+        Georgia, "Times New Roman", serif;
+}
+
+main {
+  max-width: 66ch;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 6rem;
+  animation: appear 120ms ease-out;
+}
+
+@keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  main { animation: none; }
+  * { transition: none !important; }
+}
+
+/* ---- Header ------------------------------------------------------- */
+
+.top {
+  max-width: 66ch;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.top .brand { color: var(--fg); text-decoration: none; }
+.top nav { display: flex; gap: 1rem; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top a:hover { color: var(--accent); }
+.top nav a[aria-current] { color: var(--fg); }
+
+/* ---- Text --------------------------------------------------------- */
+
+h1 { font-size: 1.7rem; line-height: 1.25; font-weight: 600; margin: 0 0 0.4rem; }
+h1 a { color: inherit; text-decoration: none; }
+h1 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+h2 { font-size: 1.25rem; font-weight: 600; }
+
+.headline { font-size: 1.45rem; line-height: 1.4; margin: 2rem 0 1.5rem; }
+.headline.quiet, .quiet { color: var(--muted); }
+.notice {
+  margin: 0 0 1.5rem;
+  padding: 0 0 0 0.9rem;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+}
+.aside { margin-top: 2rem; }
+.hint { margin-top: 2rem; color: var(--faint); font-size: 0.85rem; }
+.caption { color: var(--muted); font-size: 0.85rem; margin: 0.4rem 0 0; }
+.offscreen {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+a { color: var(--accent); text-underline-offset: 2px; }
+
+/* ---- Controls ------------------------------------------------------ */
+
+.act { margin: 1.5rem 0 0; }
+form.act { display: inline-block; margin: 0 1rem 0 0; }
+
+.primary, .outline, .link {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.primary {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-fg);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1.3rem;
+  text-decoration: none;
+}
+
+.outline {
+  display: inline-block;
+  background: none;
+  color: var(--accent);
+  border: 1px solid var(--rule);
+  padding: 0.5rem 1.1rem;
+  text-decoration: none;
+}
+
+.link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 3px;
+}
+
+.link:hover, .outline:hover { color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---- Reading view -------------------------------------------------- */
+
+.reading { padding-top: 2rem; }
+
+.counter {
+  margin: 0 0 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--faint);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.byline { color: var(--muted); font-size: 0.9rem; margin: 0 0 2rem; }
+
+.post { overflow-wrap: break-word; }
+.post p { margin: 0 0 1.3rem; }
+.post img { max-width: 100%; height: auto; }
+.post pre {
+  overflow-x: auto;
+  font-size: 0.82rem;
+  background: var(--rule);
+  padding: 0.8rem;
+  border-radius: 3px;
+}
+.post blockquote {
+  margin: 1.3rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+}
+.post h2, .post h3 { font-size: 1.15rem; margin: 2rem 0 0.6rem; }
+
+.deferred-image {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  margin: 0.4rem 0;
+  border: 1px dashed var(--rule);
+  border-radius: 3px;
+  color: var(--faint);
+  font-size: 0.82rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.deferred-image:hover { color: var(--accent); border-color: var(--accent); }
+
+.summary { color: var(--muted); margin-top: 2rem; }
+
+.controls {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.controls form.act { margin: 0; }
+
+.leave { margin-top: 4rem; }
+.leave form.act { margin: 0; }
+.leave .link { color: var(--faint); font-size: 0.82rem; }
+
+/* ---- Lists --------------------------------------------------------- */
+
+.feeds, .saved { list-style: none; margin: 1.5rem 0 3rem; padding: 0; }
+
+.feeds li, .saved li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.feeds .name, .saved .name { flex: 1 1 14rem; }
+.saved .name { color: var(--fg); text-decoration: none; }
+.saved .name:hover { color: var(--accent); }
+.meta { color: var(--faint); font-size: 0.85rem; }
+.meta.broken { color: var(--warn); }
+.feeds .remove, .saved .link { font-size: 0.85rem; }
+
+/* ---- Forms --------------------------------------------------------- */
+
+.add {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 1rem;
+}
+
+.add input[type="text"] {
+  flex: 1 1 18rem;
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+.add input::placeholder { color: var(--faint); }
+
+.import { margin: 0 0 2rem; color: var(--muted); font-size: 0.9rem; }
+.import label { display: block; margin-bottom: 0.4rem; }
+.import input[type="file"] { font: inherit; font-size: 0.85rem; max-width: 100%; }
+.import .link { margin-left: 0.5rem; }
+
+.choose label, .choices label {
+  display: block;
+  padding: 0.35rem 0;
+  cursor: pointer;
+}
+.choices { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.choices label { padding: 0; }
+
+.settings fieldset {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 0 0 2rem;
+  padding: 1.2rem 0 0;
+}
+.settings legend { padding: 0; font-size: 0.95rem; }
+.choose { margin: 1.5rem 0; }
+.choose button { margin-top: 1rem; }

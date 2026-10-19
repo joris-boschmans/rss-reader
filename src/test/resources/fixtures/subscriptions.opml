@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>joris subscriptions in feedly Cloud</title>
+  </head>
+  <body>
+    <outline text="Tech" title="Tech">
+      <outline type="rss" text="The Verge" title="The Verge"
+               xmlUrl="https://www.theverge.com/rss/index.xml"
+               htmlUrl="https://www.theverge.com/"/>
+      <outline type="rss" text="Stratechery" title="Stratechery"
+               xmlUrl="https://stratechery.com/feed/"
+               htmlUrl="https://stratechery.com/"/>
+    </outline>
+    <outline type="rss" text="Atom Notes" title="Atom Notes"
+             xmlUrl="https://atom.example.org/feed.xml"/>
+    <outline type="rss" text="A broken entry" title="A broken entry"/>
+    <outline type="rss" text="The Verge" title="The Verge duplicate"
+             xmlUrl="https://www.theverge.com/rss/index.xml"/>
+  </body>
+</opml>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Atom Notes</title>
+  <link href="https://atom.example.org/"/>
+  <updated>2026-10-14T10:30:00Z</updated>
+  <id>urn:uuid:9f1c2b24-0000-4000-8000-0000000000aa</id>
+  <entry>
+    <title>The first note</title>
+    <link href="https://atom.example.org/one"/>
+    <id>urn:uuid:9f1c2b24-0000-4000-8000-0000000000a1</id>
+    <updated>2026-10-14T10:30:00Z</updated>
+    <author><name>Grace</name></author>
+    <content type="html">&lt;p&gt;Content of the first note.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>The second note</title>
+    <link href="https://atom.example.org/two"/>
+    <id>urn:uuid:9f1c2b24-0000-4000-8000-0000000000a2</id>
+    <updated>2026-10-13T08:00:00Z</updated>
+    <summary type="html">&lt;p&gt;Only a summary here.&lt;/p&gt;</summary>
+  </entry>
+</feed>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>No Identity Here</title>
+    <link>https://noid.example.net/</link>
+    <description>A feed that gives its posts no stable identity at all.</description>
+    <item>
+      <title>First without an identity</title>
+      <pubDate>Mon, 12 Oct 2026 09:00:00 +0000</pubDate>
+      <description>No link, no identity.</description>
+    </item>
+    <item>
+      <title>Second without an identity</title>
+      <pubDate>Tue, 13 Oct 2026 09:00:00 +0000</pubDate>
+      <description>Also no link, also no identity.</description>
+    </item>
+  </channel>
+</rss>
